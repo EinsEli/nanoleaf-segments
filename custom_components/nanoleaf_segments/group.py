@@ -12,6 +12,7 @@ from homeassistant.components.light import (
     ATTR_TRANSITION,
     ColorMode,
     LightEntity,
+    DOMAIN as LIGHT_DOMAIN,
 )
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import STATE_OFF, STATE_ON
@@ -30,7 +31,7 @@ def async_describe_on_off_states(
     hass: HomeAssistant, registry: Any
 ) -> None:
     """Describe group on off states."""
-    registry.on_off_states({STATE_ON}, STATE_OFF)
+    registry.on_off_states(LIGHT_DOMAIN, {STATE_ON}, STATE_ON, STATE_OFF)
 
 
 # Store for tracking group states
