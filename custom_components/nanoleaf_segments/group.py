@@ -14,7 +14,8 @@ from homeassistant.components.light import (
     LightEntity,
 )
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from homeassistant.const import STATE_OFF, STATE_ON
+from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
@@ -22,6 +23,15 @@ from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from .const import DOMAIN, DEFAULT_GROUP_SIZE
 
 _LOGGER = logging.getLogger(__name__)
+
+
+@callback
+def async_describe_on_off_states(
+    hass: HomeAssistant, registry: Any
+) -> None:
+    """Describe group on off states."""
+    registry.on_off_states({STATE_ON}, STATE_OFF)
+
 
 # Store for tracking group states
 GROUP_STATES = {}
