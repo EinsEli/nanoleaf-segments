@@ -1,7 +1,7 @@
 # Nanoleaf Segments
 
-A custom integration for [Home Assistant](https://www.home-assistant.io/) to control individual Segments of Nanoleaf lights.  
-This can be used in combination with a Philips TV and [diyHue](https://diyhue.org/) to create a custom ambient lighting setup.
+A mainly vibe-coded custom integration for [Home Assistant](https://www.home-assistant.io/) to control individual Segments of Nanoleaf lights.  
+I use this in combination with a Philips TV and [diyHue](https://diyhue.org/) to create a custom ambient lighting setup.
 
 ## Installation
 
